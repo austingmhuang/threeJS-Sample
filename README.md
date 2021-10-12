@@ -5,8 +5,7 @@
     yarn start
 
 ## Deployed on Vercel:
-    Vercel Link...
+    https://three-js-sample-tau.vercel.app/
 
-
-## Process?
+## Process
 
