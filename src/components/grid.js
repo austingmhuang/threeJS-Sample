@@ -10,7 +10,7 @@ const Grid = ({ chestState, updateChestState, inventoryType }) => {
   // Function to update the immer state
   function updateItem(blockFrom, blockTo, item) {
     // If dragging to new inventory type run this
-    if (item.inventoryType != inventoryType) {
+    if (item.inventoryType !== inventoryType) {
       updateChestState((draft) => {
         draft[item.inventoryType][blockFrom].item = null;
         draft[inventoryType][blockTo].item = item.id;
