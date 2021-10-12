@@ -4,8 +4,10 @@
     yarn install
     yarn start
 
-## Deployed on Vercel:
-    https://three-js-sample-tau.vercel.app/
-    https://threejs-sample-minecraft.web.app/
+## Deployed on Vercel & Firebase:
+
+[Vercel](https://three-js-sample-tau.vercel.app/)
+[Firebase](https://threejs-sample-minecraft.web.app/)
+
 ## Process
 
