@@ -18,25 +18,11 @@ softShadows();
 // Create the zoom effect once the page has loaded
 const ZoomWithOrbital = () => {
   const { gl, camera } = useThree();
-  useSpring({
-    from: {
-      z: 30,
-    },
-    x: -5,
-    y: 4,
-    z: 4,
-    // React Springs onFrame
-    onFrame: ({ x, y, z }) => {
-      camera.position.x = x;
-      camera.position.y = y;
-      camera.position.z = z;
-    },
-  });
   return (
     // Oribital controls via drei
     <OrbitControls
-      enableZoom={false}
-      enablePan={false}
+      enableZoom={true}
+      enablePan={true}
       target={[0, 0, 0]}
       args={[camera, gl.domElement]}
     />

@@ -36,7 +36,7 @@ export default function Model(props) {
   // Chest open animation
   const chestOpen = useSpring({
     rotation: props.open ? [0, 0, 0] : [1.61, 0, 0],
-    position: props.open ? [0, -1.5, 0] : [0, 0, 0],
+    position: props.open ? [0, 0, 0] : [0, 0, 0],
   });
 
   return (
