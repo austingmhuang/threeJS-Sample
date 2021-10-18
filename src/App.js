@@ -1,22 +1,23 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState } from 'react'
 //Three
-import { Canvas, useThree } from "react-three-fiber";
-import { Loader, OrbitControls, softShadows } from "@react-three/drei";
-import Lights from "./components/Three/lights";
-import Floor from "./components/Three/floor";
+import { Canvas, useThree } from '@react-three/fiber'
+import { Loader, OrbitControls, softShadows } from '@react-three/drei'
+import Lights from './components/Three/lights'
+import Floor from './components/Three/floor'
 //Styles
-import "./assets/styles/App.scss";
+import './assets/styles/App.scss'
 //Model
-import Model from "./components/Three/chest";
+import Chest from './components/Three/chest'
+import Diamond from './components/Three/diamond_pickaxe'
 // Chest UI Component
-import ChestModal from "./components/chestModal";
+import ChestModal from './components/chestModal'
 
 // Initiate softShadows
-softShadows();
+softShadows()
 
 // Create the zoom effect once the page has loaded
 const ZoomWithOrbital = () => {
-  const { gl, camera } = useThree();
+  const { gl, camera } = useThree()
   return (
     // Oribital controls via drei
     <OrbitControls
@@ -25,31 +26,32 @@ const ZoomWithOrbital = () => {
       target={[0, 0, 0]}
       args={[camera, gl.domElement]}
     />
-  );
-};
+  )
+}
 
 const App = () => {
   // State if chest is open
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Canvas
         colorManagement
         shadowMap
-        camera={{ position: [-5, 4, 4], fov: 40 }}>
+        camera={{ position: [-5, 4, 4], fov: 40 }}
+      >
         <Lights />
         <Suspense fallback={null}>
-          <Model open={open} setOpen={setOpen} />
+          <Chest open={open} setOpen={setOpen} />
+          <Diamond />
           <Floor />
           <ZoomWithOrbital />
         </Suspense>
       </Canvas>
       {/* Loading bar */}
       <Loader />
-      {/* Chest Modal UI */}
       <ChestModal open={open} setOpen={setOpen} />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
