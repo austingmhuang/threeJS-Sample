@@ -2,7 +2,7 @@
 // Def: This component allows us to drag the items around & returns the actual item inside our smart blocks.
 
 import React from 'react'
-import { useDrag, DragPreviewImage, DragSource } from 'react-dnd'
+import { useDrag, DragPreviewImage } from 'react-dnd'
 
 const Item = ({ item, position, inventoryType }) => {
   // The drag hook via dnd

@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { useSpring, animated } from '@react-spring/three'
 import chestOpenSound from '../../assets/sound/open-chest.mp3'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/coffre-minecraft.glb')
+  const { nodes, materials } = useGLTF('/coffre-minecraft.glb')
   const openChest = new Audio(chestOpenSound)
 
   const handleAnimation = (e) => {
