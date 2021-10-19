@@ -31,7 +31,7 @@ export default function Model(props) {
   })
   return (
     <>
-      <primitive object={scene} scale={[0.1, 0.1, 0.1]} />
+      <primitive object={scene} scale={[0.05, 0.05, 0.05]} />
       <dragControls args={[[scene], camera, domElement]} ref={drag} />
       <OrbitControls ref={orbit} />
     </>

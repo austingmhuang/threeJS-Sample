@@ -8,7 +8,9 @@ import Floor from './components/Three/floor'
 import './assets/styles/App.scss'
 //Model
 import Chest from './components/Three/chest'
-import Diamond from './components/Three/diamond_pickaxe'
+import DiamondPickaxe from './components/Three/diamond_pickaxe'
+import Diamond from './components/Three/diamond'
+
 // Chest UI Component
 import ChestModal from './components/chestModal'
 
@@ -28,6 +30,7 @@ const App = () => {
         <Lights />
         <Suspense fallback={null}>
           <Chest open={open} setOpen={setOpen} />
+          <DiamondPickaxe />
           <Diamond />
           <Floor />
         </Suspense>
