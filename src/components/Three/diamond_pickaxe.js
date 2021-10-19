@@ -17,6 +17,8 @@ export default function Model(props) {
     gl: { domElement },
   } = useThree()
 
+  console.log('prettier')
+
   const { scene } = useGLTF('/minecraft_diamond-pickaxe.glb')
   useEffect(() => {
     if (drag.current) {
