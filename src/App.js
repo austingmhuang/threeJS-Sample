@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 //Three
-import { Canvas, useThree } from '@react-three/fiber'
-import { Loader, OrbitControls, softShadows } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import { Loader, softShadows } from '@react-three/drei'
 import Lights from './components/Three/lights'
 import Floor from './components/Three/floor'
 //Styles
@@ -14,21 +14,6 @@ import ChestModal from './components/chestModal'
 
 // Initiate softShadows
 softShadows()
-
-// Create the zoom effect once the page has loaded
-const ZoomWithOrbital = () => {
-  const { gl, camera } = useThree()
-  return (
-    // Oribital controls via drei
-    <OrbitControls
-      enableZoom={true}
-      enablePan={true}
-      enableRotate={false}
-      target={[0, 0, 0]}
-      args={[camera, gl.domElement]}
-    />
-  )
-}
 
 const App = () => {
   // State if chest is open
@@ -45,7 +30,6 @@ const App = () => {
           <Chest open={open} setOpen={setOpen} />
           <Diamond />
           <Floor />
-          <ZoomWithOrbital />
         </Suspense>
       </Canvas>
       {/* Loading bar */}
